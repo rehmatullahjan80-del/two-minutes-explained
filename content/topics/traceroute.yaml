@@ -1,0 +1,32 @@
+title: Traceroute
+module: troubleshooting-tools
+videoUrl: REPLACE_WITH_YOUTUBE_LINK
+uploadDate: '2026-09-20'
+order: 1
+definition: Traceroute shows the path your data takes to a destination by sending packets with increasing TTL values and recording which routers respond.
+notes: |-
+  Imagine sending a package to a friend in another city. You know where it starts and where it ends, but not which stops it passes through. Traceroute answers that question for your data.
+
+  ## What is a hop?
+
+  A hop is one step in the journey, usually a router forwarding your packet toward its destination. Your data may pass through your home router, your internet provider, and several other networks before it reaches a website.
+
+  ## How it works: TTL
+
+  TTL stands for Time To Live, but it does not measure seconds. It is a counter that limits how many routers a packet can pass through.
+
+  Traceroute starts with a TTL of 1. The first router receives the packet, the TTL reaches zero, and that router sends a response back. Now traceroute knows a router is there.
+
+  Then it raises the TTL to 2, so the packet can travel one router further and the second router responds. It keeps increasing the TTL until the packet reaches the destination.
+
+  ## Reading response times
+
+  Traceroute also shows how long each hop took to respond. If one part of the route suddenly shows a much higher response time, that is a clue about where a network problem might be.
+
+  ## The limitation
+
+  Some routers do not respond to traceroute requests, or deliberately limit or block them. A missing hop does not automatically mean that router is broken.
+keyPoints:
+  - Traceroute shows the network path toward a destination.
+  - It identifies hops, usually routers along the route.
+  - It uses TTL and the responses to discover those hops and measure their response times.
