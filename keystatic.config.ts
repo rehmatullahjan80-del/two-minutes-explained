@@ -1,13 +1,15 @@
 import { collection, config, fields, singleton } from "@keystatic/core";
 
 // Your GitHub repo as "username/repo-name"
-const REPO = "YOUR-GITHUB-USERNAME/two-minutes-explained";
+const REPO = "rehmatullahjan80-del/two-minutes-explained";
+const useGitHubStorage =
+  process.env.NEXT_PUBLIC_KEYSTATIC_STORAGE === "github" &&
+  Boolean(process.env.KEYSTATIC_GITHUB_CLIENT_ID) &&
+  Boolean(process.env.KEYSTATIC_GITHUB_CLIENT_SECRET) &&
+  Boolean(process.env.KEYSTATIC_SECRET);
 
 export default config({
-  storage:
-    process.env.NEXT_PUBLIC_KEYSTATIC_STORAGE === "github"
-      ? { kind: "github", repo: REPO }
-      : { kind: "local" },
+  storage: useGitHubStorage ? { kind: "github", repo: REPO } : { kind: "local" },
   singletons: {
     site: singleton({
       label: "Site settings",
