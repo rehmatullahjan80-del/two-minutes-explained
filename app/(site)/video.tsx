@@ -4,6 +4,11 @@ import { useState } from "react";
 // Shows the thumbnail first and loads YouTube's player only once clicked, which keeps the page fast.
 export default function Video({ id, title }: { id: string; title: string }) {
   const [play, setPlay] = useState(false);
+
+  if (!id) {
+    return <p className="video-empty">Video unavailable.</p>;
+  }
+
   return (
     <div className="video">
       {play ? (

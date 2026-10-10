@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { SITE } from "@/lib/site";
 import type { SearchItem } from "@/lib/content";
 
 const norm = (s: string) => s.toLowerCase().replace(/[\s\-_.,:;!?()'"\/\\]+/g, " ").trim();
@@ -29,6 +30,20 @@ function match(w: string, words: string[]) {
     else if (w.length >= 4 && Math.abs(x.length - w.length) <= 2 && lev(w, x) <= (w.length >= 8 ? 2 : 1)) best = Math.max(best, 0.5);
   }
   return best;
+}
+
+function shareTopic(href: string, title: string) {
+  const absolute = href.startsWith("http") ? href : `${SITE}${href}`;
+  if (navigator.share) {
+    navigator
+      .share({ title, url: absolute })
+      .catch(() => {
+        void navigator.clipboard.writeText(absolute);
+      });
+    return;
+  }
+
+  void navigator.clipboard.writeText(absolute);
 }
 
 export default function TopicSearch({ items }: { items: SearchItem[] }) {
@@ -83,15 +98,39 @@ export default function TopicSearch({ items }: { items: SearchItem[] }) {
             : `${exactCount} ${exactCount === 1 ? "topic" : "topics"} found${exactCount < ranked.length ? ", then close matches" : ""}`}
         </p>
       )}
-      <ul className="list">
+      <ul className="topic-list">
         {list.map(({ i }) => (
-          <li key={i.href}>
-            <Link href={i.href}>{i.title}</Link>
-            <p>{i.definition}</p>
-            <small>{i.group}</small>
+          <li key={i.href} className="topic-card">
+            <Link href={i.href} className="topic-card__media" aria-label={`Open ${i.title}`}>
+              {i.thumbnailUrl ? (
+                <img src={i.thumbnailUrl} alt={i.title} width={640} height={360} />
+              ) : (
+                <div className="topic-card__fallback">Video</div>
+              )}
+            </Link>
+            <div className="topic-card__body">
+              <div className="topic-card__meta">{i.group}</div>
+              <Link href={i.href} className="topic-card__title">
+                {i.title}
+              </Link>
+              <p>{i.definition}</p>
+              <div className="topic-card__actions">
+                <Link href={i.href} className="topic-card__primary">
+                  Open video
+                </Link>
+                <button
+                  type="button"
+                  className="topic-card__share"
+                  onClick={() => shareTopic(i.href, i.title)}
+                  aria-label={`Share ${i.title}`}
+                >
+                  Share
+                </button>
+              </div>
+            </div>
           </li>
         ))}
-        {list.length === 0 && <li>No topics match “{q}”. Try a different word.</li>}
+        {list.length === 0 && <li className="topic-empty">No topics match “{q}”. Try a different word.</li>}
       </ul>
     </>
   );

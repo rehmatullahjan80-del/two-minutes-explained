@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Video from "../../../video";
+import Engagement from "../../../engagement";
 import { SITE, clip, getTree, findTopic } from "@/lib/content";
 
 type P = { subject: string; mod: string; topic: string };
@@ -32,6 +33,7 @@ export default async function Topic({ params }: { params: Promise<P> }) {
   const { subject, mod, topic } = await params;
   const { s, m, t, prev, next } = await findTopic(subject, mod, topic);
   const base = `/${subject}/${mod}`;
+  const shareUrl = `${SITE}/${subject}/${mod}/${topic}`;
   const added = t.uploadDate
     ? new Date(t.uploadDate).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
     : "";
@@ -65,6 +67,7 @@ export default async function Topic({ params }: { params: Promise<P> }) {
       <h1>{t.title}</h1>
       <p className="definition">{t.definition}</p>
       <Video id={t.videoId} title={t.title} />
+      <Engagement slug={`${subject}/${mod}/${topic}`} title={t.title} shareUrl={shareUrl} />
       {added && (
         <p className="crumbs">
           Added <time dateTime={t.uploadDate ?? ""}>{added}</time>

@@ -1,6 +1,6 @@
 title: Traceroute
 module: troubleshooting-tools
-videoUrl: REPLACE_WITH_YOUTUBE_LINK
+videoUrl: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 uploadDate: '2026-09-20'
 order: 1
 definition: Traceroute shows the path your data takes to a destination by sending packets with increasing TTL values and recording which routers respond.

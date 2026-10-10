@@ -1,14 +1,20 @@
 import { createReader } from "@keystatic/core/reader";
+import { SITE } from "./site";
 import config from "../keystatic.config";
 
-export const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+export { SITE };
 const reader = createReader(process.cwd(), config);
 
 const byOrder = (a: { order: number | null }, b: { order: number | null }) => (a.order ?? 0) - (b.order ?? 0);
 
 export function youtubeId(input: string) {
-  const m = input.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/);
-  return m ? m[1] : input.trim();
+  const value = input.trim();
+  if (!value || /replace_with|example\.com|placeholder/i.test(value)) {
+    return "";
+  }
+
+  const m = value.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/);
+  return m ? m[1] : value;
 }
 
 export const clip = (s: string, n = 155) => (s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s);
@@ -47,7 +53,14 @@ export async function findTopic(subject: string, mod: string, topic: string) {
 }
 
 export type Tree = Awaited<ReturnType<typeof getTree>>;
-export type SearchItem = { href: string; title: string; definition: string; group: string; text: string };
+export type SearchItem = {
+  href: string;
+  title: string;
+  definition: string;
+  group: string;
+  text: string;
+  thumbnailUrl?: string;
+};
 
 // Flattens the tree into search items. Pass a subject slug to scope to one subject (group = module name);
 // omit it to cover the whole site (group = "Subject / Module").
@@ -61,6 +74,7 @@ export function searchItems(tree: Tree, subjectSlug?: string): SearchItem[] {
         definition: t.definition,
         group: subjectSlug ? m.title : `${s.title} / ${m.title}`,
         text: `${t.notes} ${t.keyPoints.join(" ")}`,
+        thumbnailUrl: t.videoId ? `https://i.ytimg.com/vi/${t.videoId}/hqdefault.jpg` : undefined,
       }))
     )
   );

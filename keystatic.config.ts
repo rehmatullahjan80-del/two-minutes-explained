@@ -1,20 +1,19 @@
 import { collection, config, fields, singleton } from "@keystatic/core";
 
-const isGitHub = process.env.NEXT_PUBLIC_KEYSTATIC_STORAGE === "github";
-
-const repoName = (process.env.NEXT_PUBLIC_KEYSTATIC_REPO || "rehmatullahjan80-del/two-minutes-explained").trim();
-const [owner, name] = repoName.split("/");
+const storageMode = process.env.NEXT_PUBLIC_KEYSTATIC_STORAGE?.trim();
+const repoName = process.env.NEXT_PUBLIC_KEYSTATIC_REPO?.trim();
+const [owner, name] = repoName ? repoName.split("/") : [];
+const isGitHub = storageMode === "github";
+const githubRepoConfig = isGitHub && owner && name ? {
+  kind: "github" as const,
+  repo: {
+    owner,
+    name,
+  },
+} : null;
 
 export default config({
-  storage: isGitHub
-    ? {
-        kind: "github",
-        repo: {
-          owner: owner || "rehmatullahjan80-del",
-          name: name || "two-minutes-explained",
-        },
-      }
-    : { kind: "local" },
+  storage: githubRepoConfig ?? { kind: "local" },
   singletons: {
     site: singleton({
       label: "Site settings",
