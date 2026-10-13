@@ -46,6 +46,12 @@ function shareTopic(href: string, title: string) {
   void navigator.clipboard.writeText(absolute);
 }
 
+function previewText(value: string, max = 180) {
+  const clean = value.replace(/\s+/g, " ").trim();
+  if (!clean) return "";
+  return clean.length > max ? `${clean.slice(0, max - 1).trimEnd()}…` : clean;
+}
+
 export default function TopicSearch({ items }: { items: SearchItem[] }) {
   const [q, setQ] = useState("");
   const index = useMemo(
@@ -101,6 +107,16 @@ export default function TopicSearch({ items }: { items: SearchItem[] }) {
       <ul className="topic-list">
         {list.map(({ i }) => (
           <li key={i.href} className="topic-card">
+            <div className="topic-card__toolbar">
+              <button
+                type="button"
+                className="topic-card__share"
+                onClick={() => shareTopic(i.href, i.title)}
+                aria-label={`Share ${i.title}`}
+              >
+                Share
+              </button>
+            </div>
             <Link href={i.href} className="topic-card__media" aria-label={`Open ${i.title}`}>
               {i.thumbnailUrl ? (
                 <img src={i.thumbnailUrl} alt={i.title} width={640} height={360} />
@@ -113,20 +129,7 @@ export default function TopicSearch({ items }: { items: SearchItem[] }) {
               <Link href={i.href} className="topic-card__title">
                 {i.title}
               </Link>
-              <p>{i.definition}</p>
-              <div className="topic-card__actions">
-                <Link href={i.href} className="topic-card__primary">
-                  Open video
-                </Link>
-                <button
-                  type="button"
-                  className="topic-card__share"
-                  onClick={() => shareTopic(i.href, i.title)}
-                  aria-label={`Share ${i.title}`}
-                >
-                  Share
-                </button>
-              </div>
+              <p className="topic-card__preview">{previewText(i.text || i.definition, 220)}</p>
             </div>
           </li>
         ))}
