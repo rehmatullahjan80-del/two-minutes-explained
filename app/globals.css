@@ -102,17 +102,17 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
 .keystatic-admin-shell a,
 .keystatic-admin-shell a:visited,
 .keystatic-admin-shell .keystatic-admin-link,
-.keystatic-admin-shell .keystatic-admin-link:visited { color:#1f2a37 !important; }
+.keystatic-admin-shell .keystatic-admin-link:visited { color:#0f172a !important; }
 .keystatic-admin-nav { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; border-bottom:1px solid var(--line); background:#fff; }
 .keystatic-admin-nav__left, .keystatic-admin-nav__right { display:flex; align-items:center; }
 .keystatic-admin-nav__right { margin-left:auto; }
 .keystatic-admin-actions { display:flex; flex-direction:column; gap:.5rem; align-items:stretch; }
-.keystatic-admin-link { display:inline-flex; align-items:center; justify-content:center; min-height:2.5rem; padding:.7rem .9rem; border-radius:8px; border:1px solid #d5dbe3; background:#f6f8fb; color:#1f2a37 !important; text-decoration:none; font-weight:600; font-size:.9rem; line-height:1; transition:border-color .15s ease, box-shadow .15s ease, background .15s ease; }
+.keystatic-admin-link { display:inline-flex; align-items:center; justify-content:center; min-height:2.5rem; padding:.7rem .9rem; border-radius:8px; border:1px solid #cbd5e1; background:#f8fafc; color:#0f172a !important; text-decoration:none; font-weight:600; font-size:.9rem; line-height:1; transition:border-color .15s ease, box-shadow .15s ease, background .15s ease; }
 .keystatic-admin-link:hover,
-.keystatic-admin-link:focus-visible { border-color:#9aa7b7; background:#eef3f9; box-shadow:0 0 0 3px rgba(31,42,55,.04); color:#1f2a37 !important; }
-.keystatic-admin-link--primary { background:#eef2f7; border-color:#d5dbe3; color:#1f2a37 !important; }
+.keystatic-admin-link:focus-visible { border-color:#94a3b8; background:#eef2ff; box-shadow:0 0 0 3px rgba(15,23,42,.05); color:#0f172a !important; }
+.keystatic-admin-link--primary { background:#edf2ff; border-color:#c7d2fe; color:#0f172a !important; }
 .keystatic-admin-link--primary:hover,
-.keystatic-admin-link--primary:focus-visible { background:#e6ebf3; color:#1f2a37 !important; }
+.keystatic-admin-link--primary:focus-visible { background:#e0e7ff; border-color:#a5b4fc; color:#0f172a !important; }
 .keystatic-analytics { max-width:64rem; margin:0 auto; padding:2rem 1.25rem 3rem; }
 .keystatic-analytics h1 { margin:0 0 1rem; }
 .analytics-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:1rem; margin-top:1rem; }
