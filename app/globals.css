@@ -99,9 +99,13 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
 .consent div { display:flex; gap:.75rem; }
 .consent button { min-height:44px; padding:0 1.25rem; font:inherit; color:var(--fg); background:#fff; border:1px solid var(--fg); border-radius:8px; cursor:pointer; }
 .keystatic-admin-shell { min-height:100vh; background:#f8fafc; }
-.keystatic-admin-nav { display:flex; align-items:center; gap:.75rem; padding:1rem 1.25rem; border-bottom:1px solid var(--line); background:#fff; }
-.keystatic-admin-nav a { color:var(--fg); text-decoration:none; font-weight:600; padding:.45rem .8rem; border-radius:999px; border:1px solid var(--line); }
-.keystatic-admin-nav a:hover { border-color:var(--accent); color:var(--accent); }
+.keystatic-admin-nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; border-bottom:1px solid var(--line); background:#fff; }
+.keystatic-admin-nav__left, .keystatic-admin-nav__right { display:flex; align-items:center; gap:.75rem; }
+.keystatic-admin-nav__right { margin-left:auto; }
+.keystatic-admin-link { display:inline-flex; align-items:center; justify-content:center; min-height:2.5rem; padding:.65rem .9rem; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--fg); text-decoration:none; font-weight:600; font-size:.9rem; line-height:1; transition:border-color .15s ease, box-shadow .15s ease, background .15s ease; }
+.keystatic-admin-link:hover { border-color:var(--accent); color:var(--accent); box-shadow:0 0 0 3px rgba(11,107,203,.08); }
+.keystatic-admin-link--primary { background:#0b6bcb; border-color:#0b6bcb; color:#fff; }
+.keystatic-admin-link--primary:hover { background:#0a5db4; color:#fff; border-color:#0a5db4; }
 .keystatic-analytics { max-width:64rem; margin:0 auto; padding:2rem 1.25rem 3rem; }
 .keystatic-analytics h1 { margin:0 0 1rem; }
 .analytics-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:1rem; margin-top:1rem; }
@@ -109,6 +113,8 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
 .analytics-card h2 { margin:0 0 .5rem; }
 .analytics-card p { margin:0; color:var(--muted); }
 @media (max-width: 640px) {
-  .keystatic-admin-nav { flex-wrap:wrap; }
-  .keystatic-admin-nav a { flex:1 1 calc(50% - .5rem); text-align:center; }
+  .keystatic-admin-nav { flex-wrap:wrap; align-items:flex-start; }
+  .keystatic-admin-nav__left, .keystatic-admin-nav__right { width:100%; }
+  .keystatic-admin-nav__right { justify-content:flex-start; flex-wrap:wrap; margin-left:0; }
+  .keystatic-admin-link { flex:1 1 100%; }
 }

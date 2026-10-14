@@ -11,9 +11,13 @@ export default function Layout({ children }: { children: ReactNode }) {
       <body>
         <div className="keystatic-admin-shell">
           <nav className="keystatic-admin-nav" aria-label="Keystatic admin navigation">
-            <a href="/keystatic">Content</a>
-            <a href={vercelUrl} target="_blank" rel="noreferrer">Vercel Analytics</a>
-            <a href={googleUrl} target="_blank" rel="noreferrer">Google Analytics</a>
+            <div className="keystatic-admin-nav__left">
+              <a href="/keystatic" className="keystatic-admin-link">Content</a>
+            </div>
+            <div className="keystatic-admin-nav__right">
+              <a href={vercelUrl} target="_blank" rel="noreferrer" className="keystatic-admin-link keystatic-admin-link--primary">Vercel Analytics</a>
+              <a href={googleUrl} target="_blank" rel="noreferrer" className="keystatic-admin-link">Google Analytics</a>
+            </div>
           </nav>
           {children}
         </div>
