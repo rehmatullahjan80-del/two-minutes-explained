@@ -104,32 +104,34 @@ export default function TopicSearch({ items }: { items: SearchItem[] }) {
 
   return (
     <>
-      <input
-        type="search"
-        className="search"
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        placeholder="Search topics, e.g. handshake or TTL"
-        aria-label="Search topics"
-      />
-      <div className="module-picker-wrap">
-        <label htmlFor="module-filter" className="sr-only">
-          Filter by module
-        </label>
-        <select
-          id="module-filter"
-          className="module-picker"
-          value={moduleFilter}
-          onChange={(e) => setModuleFilter(e.target.value)}
-          aria-label="Browse modules"
-        >
-          <option value="all">Browse all modules</option>
-          {moduleOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
+      <div className="search-controls">
+        <input
+          type="search"
+          className="search"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder="Search topics"
+          aria-label="Search topics"
+        />
+        <div className="module-picker-wrap">
+          <label htmlFor="module-filter" className="sr-only">
+            Filter by module
+          </label>
+          <select
+            id="module-filter"
+            className="module-picker"
+            value={moduleFilter}
+            onChange={(e) => setModuleFilter(e.target.value)}
+            aria-label="Browse modules"
+          >
+            <option value="all">Browse all modules</option>
+            {moduleOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       {ws.length > 0 && list.length > 0 && (
         <p className="lead" aria-live="polite">
