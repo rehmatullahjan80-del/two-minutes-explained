@@ -15,8 +15,10 @@ export default function Layout({ children }: { children: ReactNode }) {
               <a href="/keystatic" className="keystatic-admin-link">Content</a>
             </div>
             <div className="keystatic-admin-nav__right">
-              <a href={vercelUrl} target="_blank" rel="noreferrer" className="keystatic-admin-link keystatic-admin-link--primary">Vercel Analytics</a>
-              <a href={googleUrl} target="_blank" rel="noreferrer" className="keystatic-admin-link">Google Analytics</a>
+              <div className="keystatic-admin-actions">
+                <a href={vercelUrl} target="_blank" rel="noreferrer" className="keystatic-admin-link keystatic-admin-link--primary">Vercel Analytics</a>
+                <a href={googleUrl} target="_blank" rel="noreferrer" className="keystatic-admin-link">Google Analytics</a>
+              </div>
             </div>
           </nav>
           {children}
