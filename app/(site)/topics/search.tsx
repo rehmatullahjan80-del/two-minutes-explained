@@ -54,6 +54,7 @@ function previewText(value: string, max = 180) {
 
 export default function TopicSearch({ items }: { items: SearchItem[] }) {
   const [q, setQ] = useState("");
+  const [moduleFilter, setModuleFilter] = useState("all");
   const index = useMemo(
     () =>
       items.map((i) => ({
@@ -66,9 +67,23 @@ export default function TopicSearch({ items }: { items: SearchItem[] }) {
     [items]
   );
 
+  const moduleOptions = useMemo(() => {
+    const map = new Map<string, string>();
+    items.forEach((item) => {
+      const segments = item.href.split("/").filter(Boolean);
+      if (segments.length >= 2) {
+        const value = `${segments[0]}/${segments[1]}`;
+        if (!map.has(value)) map.set(value, item.group);
+      }
+    });
+    return [...map.entries()].map(([value, label]) => ({ value, label }));
+  }, [items]);
+
+  const filteredIndex = moduleFilter === "all" ? index : index.filter((i) => i.href.includes(`/${moduleFilter}/`));
+
   const ws = toWords(q);
   const ranked = ws.length
-    ? index
+    ? filteredIndex
         .map((i) => {
           let hit = 0;
           let total = 0;
@@ -83,12 +98,31 @@ export default function TopicSearch({ items }: { items: SearchItem[] }) {
         })
         .filter((r) => r.hit > 0)
         .sort((a, b) => b.hit - a.hit || b.total - a.total)
-    : index.map((i) => ({ i, hit: 0, total: 0 }));
+    : filteredIndex.map((i) => ({ i, hit: 0, total: 0 }));
   const exactCount = ranked.filter((r) => ws.length > 0 && r.hit === ws.length).length;
   const list = ranked.slice(0, 20);
 
   return (
     <>
+      <div className="module-picker-wrap">
+        <label htmlFor="module-filter" className="sr-only">
+          Filter by module
+        </label>
+        <select
+          id="module-filter"
+          className="module-picker"
+          value={moduleFilter}
+          onChange={(e) => setModuleFilter(e.target.value)}
+          aria-label="Browse modules"
+        >
+          <option value="all">Browse all modules</option>
+          {moduleOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </div>
       <input
         type="search"
         className="search"
