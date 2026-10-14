@@ -104,6 +104,14 @@ export default function TopicSearch({ items }: { items: SearchItem[] }) {
 
   return (
     <>
+      <input
+        type="search"
+        className="search"
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        placeholder="Search topics, e.g. handshake or TTL"
+        aria-label="Search topics"
+      />
       <div className="module-picker-wrap">
         <label htmlFor="module-filter" className="sr-only">
           Filter by module
@@ -123,14 +131,6 @@ export default function TopicSearch({ items }: { items: SearchItem[] }) {
           ))}
         </select>
       </div>
-      <input
-        type="search"
-        className="search"
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        placeholder="Search topics, e.g. handshake or TTL"
-        aria-label="Search topics"
-      />
       {ws.length > 0 && list.length > 0 && (
         <p className="lead" aria-live="polite">
           {exactCount === 0
