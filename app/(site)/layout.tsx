@@ -36,9 +36,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body>
         <header>
           <div className="bar">
-            <Link href="/" className="brand">
-              <span className="logo-mark" aria-hidden="true">{s.siteName.trim().charAt(0)}</span>
-              {s.siteName}
+            <Link href="/" className="brand" aria-label={s.siteName}>
+              <img src="/logo.svg" alt="2 Minutes Explained logo" className="brand-logo" />
+              <span className="brand-text">{s.siteName}</span>
             </Link>
             <nav className="menu" aria-label="Main">
               <Link href="/">Home</Link>
