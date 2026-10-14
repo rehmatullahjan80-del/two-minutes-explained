@@ -159,5 +159,16 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
   .keystatic-admin-nav__left, .keystatic-admin-nav__right { width:100%; }
   .keystatic-admin-nav__right { margin-left:0; }
   .keystatic-admin-actions { width:100%; }
+  .keystatic-admin-footer-actions {
+    position:static;
+    right:auto;
+    bottom:auto;
+    padding:0 1rem 1rem;
+    margin-top:1rem;
+    display:flex;
+    flex-direction:column;
+    gap:.5rem;
+    width:100%;
+  }
   .keystatic-admin-link { width:100%; }
 }
