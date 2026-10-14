@@ -98,7 +98,32 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
 .consent p { margin:0; flex:1 1 18rem; }
 .consent div { display:flex; gap:.75rem; }
 .consent button { min-height:44px; padding:0 1.25rem; font:inherit; color:var(--fg); background:#fff; border:1px solid var(--fg); border-radius:8px; cursor:pointer; }
-.keystatic-admin-shell { min-height:100vh; background:#1c3555; color:#f8fbff; }
+.keystatic-admin-shell {
+  min-height:100vh;
+  background:#1c3555;
+  color:#f8fbff;
+  --kui-color-scale-slate11: #f8fbff;
+  --kui-color-scale-slate10: #dfeaf9;
+  --kui-color-scale-slate9: #c2d1ea;
+  --kui-color-scale-slate8: #9aaecb;
+  --kui-color-scale-slate7: #7890b5;
+  --kui-color-scale-slate6: #5d7ea5;
+  --kui-color-scale-slate5: #496b96;
+  --kui-color-scale-slate4: #3a5f8d;
+  --kui-color-scale-slate3: #294d78;
+  --kui-color-scale-slate2: #223f63;
+  --kui-color-scale-slate1: #1c3555;
+  --kui-color-background-canvas: #1c3555;
+  --kui-color-background-surface: #223f63;
+  --kui-color-background-surface-secondary: #294d78;
+  --kui-color-background-surface-tertiary: #3a5f8d;
+  --kui-color-foreground-neutral-emphasis: #f8fbff;
+  --kui-color-foreground-neutral: #dfeaf9;
+  --kui-color-foreground-neutral-secondary: #c2d1ea;
+  --kui-color-border-neutral: #496b96;
+  --kui-color-border-muted: #3a5f8d;
+  --kui-color-alias-border-idle: #5d7ea5;
+}
 .keystatic-admin-shell a,
 .keystatic-admin-shell a:visited,
 .keystatic-admin-shell .keystatic-admin-link,
