@@ -102,6 +102,7 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
   min-height:100vh;
   background:#1c3555;
   color:#f8fbff;
+  position:relative;
   --kui-color-scale-slate11: #f8fbff;
   --kui-color-scale-slate10: #dfeaf9;
   --kui-color-scale-slate9: #c2d1ea;
@@ -131,7 +132,16 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
 .keystatic-admin-nav { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; border-bottom:1px solid #2f4d73; background:#223f63; }
 .keystatic-admin-nav__left, .keystatic-admin-nav__right { display:flex; align-items:center; }
 .keystatic-admin-nav__right { margin-left:auto; }
-.keystatic-admin-actions { display:flex; flex-direction:column; gap:.5rem; align-items:stretch; }
+.keystatic-admin-footer-actions {
+  position:fixed;
+  right:1.5rem;
+  bottom:1.5rem;
+  z-index:20;
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  align-items:stretch;
+}
 .keystatic-admin-link { display:inline-flex; align-items:center; justify-content:center; min-height:2.5rem; padding:.7rem .9rem; border-radius:8px; border:1px solid #426a97; background:#294d78; color:#f8fbff !important; text-decoration:none; font-weight:600; font-size:.9rem; line-height:1; transition:border-color .15s ease, box-shadow .15s ease, background .15s ease; }
 .keystatic-admin-link:hover,
 .keystatic-admin-link:focus-visible { border-color:#9ec8ff; background:#335f90; box-shadow:0 0 0 3px rgba(158,200,255,.12); color:#f8fbff !important; }
