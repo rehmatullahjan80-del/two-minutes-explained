@@ -134,12 +134,12 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
 .keystatic-admin-nav__right { margin-left:auto; }
 .keystatic-admin-footer-actions {
   position:fixed;
-  right:1.5rem;
-  bottom:1.5rem;
+  right:1rem;
+  bottom:1rem;
   z-index:20;
   display:flex;
   flex-direction:column;
-  gap:.5rem;
+  gap:.4rem;
   align-items:stretch;
 }
 .keystatic-admin-link { display:inline-flex; align-items:center; justify-content:center; min-height:2.5rem; padding:.7rem .9rem; border-radius:8px; border:1px solid #426a97; background:#294d78; color:#f8fbff !important; text-decoration:none; font-weight:600; font-size:.9rem; line-height:1; transition:border-color .15s ease, box-shadow .15s ease, background .15s ease; }
