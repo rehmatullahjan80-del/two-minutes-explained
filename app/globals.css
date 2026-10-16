@@ -99,10 +99,14 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
 .consent div { display:flex; gap:.75rem; }
 .consent button { min-height:44px; padding:0 1.25rem; font:inherit; color:var(--fg); background:#fff; border:1px solid var(--fg); border-radius:8px; cursor:pointer; }
 .keystatic-admin-shell {
+  display:flex;
+  flex-direction:column;
   min-height:100vh;
   background:#1c3555;
   color:#f8fbff;
   position:relative;
+  overflow-x:hidden;
+  padding-bottom:7rem;
   --kui-color-scale-slate11: #f8fbff;
   --kui-color-scale-slate10: #dfeaf9;
   --kui-color-scale-slate9: #c2d1ea;
@@ -129,19 +133,27 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
 .keystatic-admin-shell a:visited,
 .keystatic-admin-shell .keystatic-admin-link,
 .keystatic-admin-shell .keystatic-admin-link:visited { color:#f8fbff !important; }
+.keystatic-admin-shell > *:not(.keystatic-admin-footer-actions) {
+  position:relative;
+  z-index:1;
+}
 .keystatic-admin-nav { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; border-bottom:1px solid #2f4d73; background:#223f63; }
 .keystatic-admin-nav__left, .keystatic-admin-nav__right { display:flex; align-items:center; }
 .keystatic-admin-nav__right { margin-left:auto; }
 .keystatic-admin-footer-actions {
-  position:relative;
-  z-index:20;
+  position:fixed;
+  right:1rem;
+  bottom:calc(1rem + env(safe-area-inset-bottom));
+  z-index:0;
   display:flex;
   flex-direction:column;
   gap:.5rem;
   align-items:stretch;
   width:max-content;
   max-width:min(100%, 22rem);
-  margin:1.5rem 1.5rem 1.5rem auto;
+  margin:0;
+  padding-top:0;
+  align-self:flex-end;
 }
 .keystatic-admin-link { display:inline-flex; align-items:center; justify-content:center; min-height:2.5rem; padding:.7rem .9rem; border-radius:8px; border:1px solid #426a97; background:#294d78; color:#f8fbff !important; text-decoration:none; font-weight:600; font-size:.9rem; line-height:1; transition:border-color .15s ease, box-shadow .15s ease, background .15s ease; }
 .keystatic-admin-link:hover,
@@ -161,15 +173,15 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
   .keystatic-admin-nav__right { margin-left:0; }
   .keystatic-admin-actions { width:100%; }
   .keystatic-admin-footer-actions {
-    position:relative;
-    left:auto;
-    right:auto;
-    bottom:auto;
-    width:100%;
+    position:fixed;
+    left:1rem;
+    right:1rem;
+    bottom:calc(.75rem + env(safe-area-inset-bottom));
+    width:auto;
     max-width:none;
-    padding:0 1rem 1rem;
-    margin:1rem 0 0;
-    z-index:20;
+    padding:0;
+    margin:0;
+    z-index:0;
     display:flex;
     flex-direction:column;
     gap:.5rem;
