@@ -1,0 +1,51 @@
+title: 'What is an IP Address? Explained in 2 Minutes | How the Internet Finds You '
+module: network-communication
+videoUrl: https://youtu.be/DZAcCG1ReJo?si=pq7b0zte-QlOtPsz
+uploadDate: 2026-10-16
+order: 1
+definition: >-
+  An IP address is a device’s digital address that helps network data reach the
+  correct destination.
+notes: >-
+  What is an IP Address?
+
+  IP stands for Internet Protocol. An IP address is a numerical address assigned
+  to a device connected to a network, helping information find the correct
+  destination.
+
+  Phones, laptops, smart TVs, and other connected devices use IP addresses to
+  communicate over networks.
+
+  How Does an IP Address Work?
+
+  When you visit a website, your device sends a request, and the website sends
+  data back toward your device using IP addressing.
+
+  Think of the internet as a massive city. Just as a delivery driver needs a
+  house address to deliver a package, network data needs IP addresses to reach
+  the right destination.
+
+  Public vs Private IP Address
+
+  Public IP Address: Identifies your internet connection on the internet.
+  Websites can usually see this address when you connect to them.
+
+  Private IP Address: Identifies individual devices within your local network,
+  such as your phone or laptop. Your router uses it to help direct incoming data
+  to the correct device.
+
+  Why Does an IP Address Matter?
+
+  Without IP addressing, networks would struggle to determine where data should
+  be sent. IP addresses help devices communicate, websites deliver requested
+  information, and routers direct data toward its intended destination.
+keyPoints:
+  - >-
+    Digital Address: An IP address acts like a digital address for a device on a
+    network.
+  - >-
+    Correct Destination: It helps data reach the right device when you browse
+    websites, stream videos, or send messages.
+  - >-
+    Public vs Private: A public IP identifies your internet connection
+    externally, while a private IP identifies devices within your local network.
