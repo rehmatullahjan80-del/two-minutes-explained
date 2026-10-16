@@ -106,7 +106,6 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
   color:#f8fbff;
   position:relative;
   overflow-x:hidden;
-  padding-bottom:7rem;
   --kui-color-scale-slate11: #f8fbff;
   --kui-color-scale-slate10: #dfeaf9;
   --kui-color-scale-slate9: #c2d1ea;
@@ -133,25 +132,27 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
 .keystatic-admin-shell a:visited,
 .keystatic-admin-shell .keystatic-admin-link,
 .keystatic-admin-shell .keystatic-admin-link:visited { color:#f8fbff !important; }
-.keystatic-admin-shell > *:not(.keystatic-admin-footer-actions) {
-  position:relative;
-  z-index:1;
+.keystatic-admin-content {
+  display:flex;
+  flex-direction:column;
+  width:100%;
 }
 .keystatic-admin-nav { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; border-bottom:1px solid #2f4d73; background:#223f63; }
 .keystatic-admin-nav__left, .keystatic-admin-nav__right { display:flex; align-items:center; }
 .keystatic-admin-nav__right { margin-left:auto; }
 .keystatic-admin-footer-actions {
-  position:fixed;
-  right:1rem;
-  bottom:calc(1rem + env(safe-area-inset-bottom));
-  z-index:0;
+  position:relative;
+  z-index:1;
   display:flex;
   flex-direction:column;
   gap:.5rem;
   align-items:stretch;
   width:max-content;
   max-width:min(100%, 22rem);
-  margin:0;
+  margin-top:1.5rem;
+  margin-left:auto;
+  margin-right:1.5rem;
+  margin-bottom:1.5rem;
   padding-top:0;
   align-self:flex-end;
 }
@@ -173,15 +174,15 @@ h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
   .keystatic-admin-nav__right { margin-left:0; }
   .keystatic-admin-actions { width:100%; }
   .keystatic-admin-footer-actions {
-    position:fixed;
-    left:1rem;
-    right:1rem;
-    bottom:calc(.75rem + env(safe-area-inset-bottom));
-    width:auto;
+    position:relative;
+    left:auto;
+    right:auto;
+    bottom:auto;
+    width:100%;
     max-width:none;
-    padding:0;
-    margin:0;
-    z-index:0;
+    padding:0 1rem 1rem;
+    margin:1rem 0 0;
+    z-index:1;
     display:flex;
     flex-direction:column;
     gap:.5rem;
