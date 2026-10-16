@@ -1,0 +1,60 @@
+title: 'MAC Address Explained in 2 Minutes | What Is It? '
+module: network-communication
+videoUrl: https://youtu.be/Ig9vKiecIbc?si=Plz39IK5aHQU750D
+uploadDate: 2026-10-16
+order: 1
+definition: >-
+  A MAC address (Media Access Control address) is a hardware-level identifier
+  used to identify a network interface on a local network.
+notes: >-
+  What is a MAC Address?
+
+  A MAC address is an identifier associated with a device’s network hardware,
+  such as its Wi-Fi adapter or Ethernet adapter. Laptops, smartphones, smart
+  TVs, and routers use MAC addresses to communicate over local networks.
+
+  Think of it like a car’s license plate, which helps distinguish one vehicle
+  from another.
+
+  How Does a MAC Address Work?
+
+  When devices communicate on the same local network, MAC addresses help
+  identify the sender and intended recipient of data on the local network link.
+
+  For example, when your laptop communicates with another device through your
+  home network, your router and other networking equipment use MAC addresses to
+  help deliver data to the correct destination.
+
+  MAC Address vs IP Address
+
+  An IP address helps identify a device's network location so data can be routed
+  between networks.
+
+  A MAC address helps identify a network interface during communication on a
+  local network.
+
+  Think of it like delivering a package. The IP address is like the address that
+  helps get the package to the right location, while the MAC address helps
+  identify the intended recipient on the local network.
+
+  Unlike IP addresses, MAC addresses are generally associated with network
+  hardware. However, they can sometimes be changed or randomized by software.
+
+  Why Does a MAC Address Matter?
+
+  MAC addresses help network devices recognize each other and deliver data
+  across a local network. They work alongside IP addresses, allowing devices to
+  communicate efficiently.
+
+  MAC addresses are designed to be unique, although duplicates can occur through
+  misconfiguration, cloning, or deliberate changes.
+keyPoints:
+  - >-
+    Hardware Identifier: A MAC address identifies a network interface, such as a
+    device’s Wi-Fi adapter.
+  - >-
+    Local Network Communication: MAC addresses help devices deliver data to the
+    correct recipient on a local network.
+  - >-
+    MAC vs IP: An IP address identifies a network location, while a MAC address
+    identifies a network interface for local network communication.
