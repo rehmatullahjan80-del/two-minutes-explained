@@ -1,0 +1,63 @@
+title: IPv4 vs IPv6 Explained in 2 Minutes | What's the Difference?
+module: network-communication
+videoUrl: https://youtu.be/YwBc2XLNw6o?si=Ybmz_jp4vdZwZzzX
+uploadDate: 2026-10-16
+order: 1
+definition: >-
+  IPv4 uses 32-bit IP addresses with a limited address space, while IPv6 uses
+  128-bit addresses to provide an enormously larger number of addresses for the
+  growing internet.
+notes: >-
+  What is IPv4?
+
+  IPv4 stands for Internet Protocol version 4. It uses addresses made up of four
+  groups of numbers, such as 192.168.1.10.
+
+  IPv4 provides around 4.3 billion possible addresses. Although that seemed like
+  a huge number, the growth of computers, smartphones, smart TVs, and other
+  connected devices created a need for more addresses.
+
+  What is IPv6?
+
+  IPv6 stands for Internet Protocol version 6. It was developed to address the
+  limitations of IPv4's address space.
+
+  IPv6 uses 128-bit addresses written with hexadecimal numbers and letters
+  separated by colons. For example, 2001:db8::1.
+
+  Its enormous address space provides enough addresses to support the continued
+  growth of internet-connected devices.
+
+  IPv4 vs IPv6
+
+  The main difference is the number of available addresses and their format.
+
+  - IPv4: Uses 32-bit addresses, written as four decimal numbers separated by
+  dots.
+
+  - IPv6: Uses 128-bit addresses, written in hexadecimal and separated by
+  colons.
+
+  Think of IPv4 as an old city running out of house addresses as its population
+  grows. IPv6 is like creating a much larger addressing system with an enormous
+  number of available addresses.
+
+  Why Is the Internet Moving Toward IPv6?
+
+  As more devices connect to the internet, the limited IPv4 address space
+  becomes a challenge. IPv6 provides a long-term solution by offering a vastly
+  larger pool of addresses.
+
+  However, IPv4 isn't disappearing overnight. Both IPv4 and IPv6 are still in
+  use, and many modern networks support both. The transition is gradual because
+  the entire internet cannot switch to a new protocol all at once.
+keyPoints:
+  - >-
+    IPv4: Uses 32-bit addresses and provides around 4.3 billion possible
+    addresses.
+  - >-
+    IPv6: Uses 128-bit addresses and provides an enormously larger address
+    space.
+  - >-
+    - Both Are Still in Use: The internet is gradually adopting IPv6 while IPv4
+    continues to operate.
