@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
 import "../globals.css";
-
-const vercelUrl = process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_URL || "https://vercel.com/";
-const googleUrl = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_URL || "https://analytics.google.com/analytics/web/";
+import { KeystaticFooter } from "./KeystaticFooter";
 
 export const metadata = { robots: { index: false, follow: false } };
 
@@ -16,10 +14,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             <div className="keystatic-admin-nav__right" />
           </nav>
           <div className="keystatic-admin-content">
-            {children}
-            <div className="keystatic-admin-footer-actions" aria-label="Analytics links">
-              <a href={vercelUrl} target="_blank" rel="noreferrer" className="keystatic-admin-link keystatic-admin-link--primary">Vercel Analytics</a>
-              <a href={googleUrl} target="_blank" rel="noreferrer" className="keystatic-admin-link">Google Analytics</a>
+            <div className="keystatic-admin-panel">
+              {children}
+              <KeystaticFooter />
             </div>
           </div>
         </div>
