@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import "../globals.css";
-import { KeystaticFooter } from "./KeystaticFooter";
 
 export const metadata = { robots: { index: false, follow: false } };
 
@@ -16,7 +15,6 @@ export default function Layout({ children }: { children: ReactNode }) {
           <div className="keystatic-admin-content">
             <div className="keystatic-admin-panel">
               {children}
-              <KeystaticFooter />
             </div>
           </div>
         </div>
