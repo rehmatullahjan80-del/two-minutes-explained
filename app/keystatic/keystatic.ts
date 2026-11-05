@@ -8,8 +8,8 @@ const KeystaticPage = makePage(config);
 
 export default function KeystaticDashboard() {
   return React.createElement(
-    React.Fragment,
-    null,
+    "div",
+    { className: "keystatic-dashboard-wrap" },
     React.createElement(KeystaticPage),
     React.createElement(KeystaticFooter)
   );

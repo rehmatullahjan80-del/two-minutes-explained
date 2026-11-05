@@ -153,6 +153,13 @@ body:has(.keystatic-admin-shell) { overflow-x:hidden; overflow-y:auto !important
   flex:1 1 auto;
   background:#1c3555;
 }
+.keystatic-dashboard-wrap {
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  min-height:calc(100vh - 72px);
+  background:#1c3555;
+}
 .keystatic-admin-nav { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; border-bottom:1px solid #2f4d73; background:#223f63; }
 .keystatic-admin-nav__left, .keystatic-admin-nav__right { display:flex; align-items:center; }
 .keystatic-admin-nav__right { margin-left:auto; }
